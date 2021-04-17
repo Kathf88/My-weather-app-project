@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <meta name="viewport" content="width=>, initial-scale=1.0" />
+
+    <title>The forest weather app</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/c688de21f9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <link rel="stylesheet" href="styles.css" />
+
+  <body>
+    <div class="container">
+      <button
+        type="button"
+        id="farenheit-button"
+        class="btn btn-outline-light btn-sm"
+      >
+        °F
+      </button>
+
+      <button
+        type="button"
+        id="celcius-button"
+        class="btn btn-outline-light btn-sm"
+      >
+        °C
+      </button>
+
+      <button
+        type="button"
+        id="current-location-btn"
+        class="btn btn-outline-light btn-sm"
+      >
+        Your location
+      </button>
+
+      <form class="searchcity" id="form-search">
+        <input
+          type="text"
+          placeholder="Enter city"
+          autocomplete="off"
+          id="enter-city-search"
+        />
+
+        <input type="submit" value="search" id="city-input" />
+      </form>
+
+      <h1 id="display-city">Ålesund</h1>
+
+      <h2 id="temperatureShown">-2°C</h2>
+      <h3>15:13:01</h3>
+      <h4>Sunday, 20th march</h4>
+
+      <p id="wind">Wind: 5km/h</p>
+      <p id="description">Cloudy</p>
+      <p id="humidity">Humidity: 50%</p>
+      <hr />
+      <h5>Five days forecast</h5>
+
+      <div class="row">
+        <div class="col-2">
+          Mon <br />
+          -2°C
+          <br />
+          <i class="far fa-snowflake"></i>
+        </div>
+        <div class="col-2">
+          Tu<br />
+          0°C
+          <br />
+          <i class="far fa-moon"></i>
+        </div>
+        <div class="col-2">
+          Wed<br />
+          5°C
+          <br />
+          <i class="fas fa-cloud-sun-rain"></i>
+        </div>
+        <div class="col-2">
+          Thu<br />
+          12°C
+          <br />
+          <i class="far fa-sun"></i>
+        </div>
+        <div class="col-2">
+          Fri<br />
+          7°C
+          <br />
+          <i class="fas fa-cloud-sun-rain"></i>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

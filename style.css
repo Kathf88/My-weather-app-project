@@ -1,0 +1,72 @@
+h1 {
+  margin: 0px;
+  text-align: center;
+  padding-top: 25px;
+  font-weight: bold;
+  font-family: "Abel", sans-serif;
+  text-transform: capitalize;
+}
+
+h1 i {
+  color: cadetblue;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Abel", sans-serif;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Abel", sans-serif;
+}
+
+h4 {
+  text-align: center;
+  font-family: "Abel", sans-serif;
+}
+
+h5 {
+  font-style: oblique;
+  font-weight: 500;
+  font-family: "Abel", sans-serif;
+}
+
+p {
+  text-align: center;
+  padding-left: 12px;
+  font-family: "Abel", sans-serif;
+  text-transform: capitalize;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+.btn {
+  text-align: left;
+}
+
+.container {
+  width: 50%;
+  opacity: 1;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 25px;
+  border-style: solid;
+  background-image: url(https://images.pexels.com/photos/1110504/pexels-photo-1110504.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+  color: aliceblue;
+}
+
+.searchcity {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  top: 0;
+  padding-top: 50px;
+}
+
+.row {
+  text-align: center;
+}
