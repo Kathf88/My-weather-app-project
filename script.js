@@ -137,7 +137,7 @@ function changeFarenheit(event) {
   event.preventDefault();
   let temperatureShown = document.querySelector("#temperatureShown");
   let h2 = document.querySelector("h2");
-  h2.innerHTML = `28,4°F`;
+  h2.innerHTML = `28°F`;
 }
 
 let celciusButton = document.querySelector("#celcius-button");
