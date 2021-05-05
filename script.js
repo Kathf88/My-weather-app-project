@@ -52,6 +52,56 @@ if (secounds < 10) {
 h3.innerHTML = `${hours}:${minutes}:${secounds}`;
 h4.innerHTML = `${day} ${date}. ${month}`;
 
+
+
+
+
+
+//laga til dinne no 05.05.2021 20:55
+
+function displayForecast () {
+  let forecastElement = document.querySelector("#forecast");
+
+
+let forecastHTML= `<div class="row">`;
+
+let days =["Wed", "Thu", "Fri"]
+days.forEach (function(day) {
+  forecastHTML=
+  forecastHTML + 
+  `
+       <div class="col-2">
+          <div class="weather-forecast-date">
+       ${day}
+        </div>
+<img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="36"/>
+
+<div class="weather-forecast-temperatures">
+  <span class="weather-forecast-temperature-max">
+18° </span>
+<span class="weather-forecast-temperature-min">12° 
+</span>
+</div>
+      </div>
+
+`;
+
+})
+
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
+
+
+
+
+
+
+
+
+
 //weather conditions (windspeed,temp,humidity)
 
 let apiKey = "5ce87312c228bb7b7cf3354cf2903ed3";
@@ -59,6 +109,7 @@ let searchCity = document.querySelector("#enter-city-search");
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=${apiKey}&units=metric`;
 
 //weather conditions (windspeed,temp,humidity)
+
 function showTemperature(response) {
   console.log(response.data);
 
@@ -71,6 +122,7 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+
 
   temperatureElement.innerHTML = `${temperature}°C`;
   descriptionElement.innerHTML = `${description}`;
@@ -145,3 +197,7 @@ celciusButton.addEventListener("click", changeCelcius);
 
 let farenheitButton = document.querySelector("#farenheit-button");
 farenheitButton.addEventListener("click", changeFarenheit);
+
+
+
+displayForecast();

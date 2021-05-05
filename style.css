@@ -67,6 +67,15 @@ button {
   padding-top: 50px;
 }
 
-.row {
+.weather-forecast {
+  margin-top: 20px;
   text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 15px;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
