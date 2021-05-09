@@ -54,39 +54,46 @@ h4.innerHTML = `${day} ${date}. ${month}`;
 
 
 
+function formatDay (timestamp) {
+let date = new Date (timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+return days[day];
+
+}
 
 
-
-//laga til dinne no 05.05.2021 20:55
+//laga til dinne no 05.05.2021 20:55 og 09.05.2021
 
 function displayForecast (response) {
+  let forecast = response.data.daily;
  
   let forecastElement = document.querySelector("#forecast");
 
 
 let forecastHTML= `<div class="row">`;
-
-let days =["Wed", "Thu", "Fri", "Sat", "Sun"]
-days.forEach (function(day) {
+forecast.forEach (function(forecastDay, index) {
+  if (index < 6){
   forecastHTML=
   forecastHTML + 
   `
        <div class="col-2">
           <div class="weather-forecast-date">
-       ${day}
+       ${formatDay(forecastDay.dt)}
         </div>
-<img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="36"/>
+<img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="36"/>
 
 <div class="weather-forecast-temperatures">
   <span class="weather-forecast-temperature-max">
-18° </span>
-<span class="weather-forecast-temperature-min">12° 
+${Math.round(forecastDay.temp.max)}° </span>
+<span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}° 
 </span>
 </div>
       </div>
 
 `;
-
+}
 })
 
 
