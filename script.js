@@ -59,13 +59,14 @@ h4.innerHTML = `${day} ${date}. ${month}`;
 
 //laga til dinne no 05.05.2021 20:55
 
-function displayForecast () {
+function displayForecast (response) {
+ 
   let forecastElement = document.querySelector("#forecast");
 
 
 let forecastHTML= `<div class="row">`;
 
-let days =["Wed", "Thu", "Fri"]
+let days =["Wed", "Thu", "Fri", "Sat", "Sun"]
 days.forEach (function(day) {
   forecastHTML=
   forecastHTML + 
@@ -96,12 +97,6 @@ forecastElement.innerHTML = forecastHTML;
 
 
 
-
-
-
-
-
-
 //weather conditions (windspeed,temp,humidity)
 
 let apiKey = "5ce87312c228bb7b7cf3354cf2903ed3";
@@ -110,8 +105,22 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.val
 
 //weather conditions (windspeed,temp,humidity)
 
+
+//HOLDER PÅ HER 09.05.2021
+
+function getForecast(coordinates) {
+ let apiKey = "5ce87312c228bb7b7cf3354cf2903ed3";
+let apiUrl = 
+`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+
+axios.get(apiUrl).then(displayForecast);
+}
+
+
+
 function showTemperature(response) {
-  console.log(response.data);
+  
 
   let temperature = Math.round(response.data.main.temp);
   let humidity = Math.round(response.data.main.humidity);
@@ -128,19 +137,36 @@ function showTemperature(response) {
   descriptionElement.innerHTML = `${description}`;
   humidityElement.innerHTML = `Humidity: ${humidity}%`;
   windElement.innerHTML = `Wind: ${wind} km/h`;
+
+
+
+getForecast(response.data.coord) //må være her pga responsen gir oss coords 
+
 }
 
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 
+
+
+
+
+
+
+
+
+
+
+
+
 //Function search on load/display default a city
 
-//function search (city){
-//let apiKey = "5ce87312c228bb7b7cf3354cf2903ed3";
-//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
-//axios.get(apiUrl).then(showTemperature);
-//}
+function search (city){
+let apiKey = "5ce87312c228bb7b7cf3354cf2903ed3";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(showTemperature);
+}
 
-//search("Alicante");
+
 
 //Display city/place in h1 (endra den fra search til handleSumbit etter videoen)
 
@@ -199,5 +225,4 @@ let farenheitButton = document.querySelector("#farenheit-button");
 farenheitButton.addEventListener("click", changeFarenheit);
 
 
-
-displayForecast();
+search("Ålesund");
