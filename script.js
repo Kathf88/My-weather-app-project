@@ -209,27 +209,9 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-location-btn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-//change °C to °F (fake data)
 
-function changeCelcius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperatureShown");
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `-2°C`;
-}
 
-function changeFarenheit(event) {
-  event.preventDefault();
-  let temperatureShown = document.querySelector("#temperatureShown");
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `28°F`;
-}
 
-let celciusButton = document.querySelector("#celcius-button");
-celciusButton.addEventListener("click", changeCelcius);
-
-let farenheitButton = document.querySelector("#farenheit-button");
-farenheitButton.addEventListener("click", changeFarenheit);
 
 
 search("Ålesund");
