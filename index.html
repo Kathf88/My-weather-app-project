@@ -31,47 +31,49 @@
 
   <body>
     <div class="container">
-      <button
-        type="button"
-        id="current-location-btn"
-        class="btn btn-outline-light btn-sm"
-      >
-        Your location
-      </button>
+      <div class="weather-app">
+        <button
+          type="button"
+          id="current-location-btn"
+          class="btn btn-outline-light btn-sm"
+        >
+          Your location
+        </button>
 
-      <form class="searchcity" id="form-search">
-        <input
-          type="text"
-          placeholder="Enter city"
-          autocomplete="off"
-          id="enter-city-search"
-        />
+        <form class="searchcity" id="form-search">
+          <input
+            type="text"
+            placeholder="Enter city"
+            autocomplete="off"
+            id="enter-city-search"
+          />
 
-        <input type="submit" value="search" id="city-input" />
-      </form>
+          <input type="submit" value="search" id="city-input" />
+        </form>
 
-      <h1 id="display-city">Ålesund</h1>
+        <h1 id="display-city">Ålesund</h1>
 
-      <h2 id="temperatureShown">-2°C</h2>
+        <h2 id="temperatureShown">-2°C</h2>
 
-      <h3>15:13:01</h3>
-      <h4>Sunday, 20th march</h4>
+        <h3>15:13:01</h3>
+        <h4>Sunday, 20th march</h4>
 
-      <p id="wind">Wind: 5km/h</p>
-      <p id="description">Cloudy</p>
-      <p id="humidity">Humidity: 50%</p>
-      <hr />
+        <p id="wind">Wind: 5km/h</p>
+        <p id="description">Cloudy</p>
+        <p id="humidity">Humidity: 50%</p>
+        <hr />
 
-      <div class="weather-forecast" id="forecast"></div>
+        <div class="weather-forecast" id="forecast"></div>
+      </div>
+      <small>
+        <a
+          href="https://github.com/Kathf88/My-weather-app-project"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Kathrine Færø
+      </small>
     </div>
-    <small>
-      <a
-        href="https://github.com/Kathf88/My-weather-app-project"
-        target="_blank"
-        >Open-source code</a
-      >
-      by Kathrine Færø
-    </small>
 
     <script src="script.js"></script>
   </body>

@@ -145,6 +145,9 @@ function showTemperature(response) {
   humidityElement.innerHTML = `Humidity: ${humidity}%`;
   windElement.innerHTML = `Wind: ${wind} km/h`;
 
+  let h1= document.querySelector("h1");
+  h1.innerHTML = response.data.name;
+
 
 
 getForecast(response.data.coord) //må være her pga responsen gir oss coords 
@@ -152,14 +155,6 @@ getForecast(response.data.coord) //må være her pga responsen gir oss coords
 }
 
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
-
-
-
-
-
-
-
-
 
 
 

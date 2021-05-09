@@ -44,6 +44,10 @@ button {
   margin: 0 auto;
 }
 
+.weather-app {
+  text-align: center;
+}
+
 .btn {
   text-align: left;
 }
